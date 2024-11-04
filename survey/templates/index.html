@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey Index</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/my_css/my_style.css' %}">
+ 
+</head>
+<body>
+
+    <div class="container">
+        <form action="/result" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-control" placeholder="your name" name="name">
+            </div>
+            <div class="mb-3">
+                <labelb class="form-label">Dojo Locations</label>
+                <select class="form-select" name="location">
+                    <option value="San Jose">San Jose</option>
+                    <option value="New York">New York</option>
+                    <option value="Jerusalem">Jerusalem</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <labelb class="form-label">Favourate Language</label>
+                <select class="form-select" name="language">
+                    <option value="English">English</option>
+                    <option value="Arabic">Arabic</option>
+                </select>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="Male" required>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="Female">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Female
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="All" id="flexCheckDefault" name="program" checked>
+                <label class="form-check-label" for="flexCheckDefault" >
+                  All
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Python" id="flexCheckChecked" name="program" >
+                <label class="form-check-label" for="flexCheckChecked">
+                  Python
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="JAVA" id="flexCheckChecked" name="program" >
+                <label class="form-check-label" for="flexCheckChecked">
+                  JAVA
+                </label>
+              </div>
+
+            <div class="mb-3">
+                <labelb class="form-label">Comments (Optional)</label>
+                <textarea class="form-control" rows="3" name="comment"></textarea>
+            </div>
+
+            <div class="button-section">
+                <button type="submit" class="btn btn-primary">Button</button>
+            </div>
+        </form>
+    </div>
+
+
+      <script src="{% static 'js/bootstrap.js' %}" ></script>
+</body>
+</html>

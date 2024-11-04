@@ -1,0 +1,15 @@
+.container {
+    margin: 100px auto;
+    padding: 30px;
+    max-width: 600px;
+    border: 1px solid black;
+}
+
+.button-section {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.result-title{
+    text-decoration: underline;
+}
